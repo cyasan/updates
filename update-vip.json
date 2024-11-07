@@ -28,7 +28,6 @@
   ],
   "remove": [
     "plugins/e.js",
-    "plugins/f.js",
     "plugins/y.js"
   ]
 }
