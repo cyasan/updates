@@ -29,7 +29,6 @@
   "remove": [
     "plugins/e.js",
     "plugins/f.js",
-    "plugins/y.js",
-    "plugins/menu.js"
+    "plugins/y.js"
   ]
 }
