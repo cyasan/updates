@@ -15,6 +15,7 @@
     }
   ],
   "remove": [
-    "plugins/ai/removebg2.js"
+    "plugins/ai/removebg2.js",
+    "plugins/convert/fakemedia2.js"
   ]
 }
