@@ -1,5 +1,5 @@
 {
-  "version": "v9.1.9-fixbrat",
+  "version": "9.1.10",
   "update": [
     {
       "path": "main.js",
