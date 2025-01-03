@@ -20,6 +20,7 @@
   ],
   "remove": [
     "system/baileys.js",
-    "system/login.js"
+    "system/login.js",
+    "plugins/ai/gpt4.js"
   ]
 }
