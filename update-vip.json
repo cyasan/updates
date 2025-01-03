@@ -44,6 +44,7 @@
   ],
   "remove": [
     "system/baileys.js",
-    "system/login.js"
+    "system/login.js",
+    "plugins/owner/restart.js"
   ]
 }
