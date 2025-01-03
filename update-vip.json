@@ -15,6 +15,7 @@
     }
   ],
   "remove": [
-    "system/baileys.js"
+    "system/baileys.js",
+    "system/login.js"
   ]
 }
