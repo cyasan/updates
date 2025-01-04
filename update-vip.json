@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-ytdl",
+  "version": "9.1.10-ap",
   "update": [
     {
       "path": "plugins/ai/ai.js",
