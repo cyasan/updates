@@ -60,6 +60,10 @@
     {
       "path": "group/listpesan",
       "code": "\"exports.run={usage:[\\\"listpesan\\\"],hidden:[\\\"listchat\\\"],category:\\\"group\\\",async:async(e,{func:a,mecha:r,groups:t})=>{t=t.member.filter(e=>void 0!==e.chat&&void 0!==global.db.users[e.jid]&&0<e.chat).filter(a=>e.members.some(e=>e.id===a.jid));if(0==t.length)return e.reply(\\\"Empty data.\\\");var i,t=t.sort((e,a)=>a.chat-e.chat),s=t.map(e=>e.jid);let n=0;for(i of t)n+=i.chat;var o=`乂  *L I S T - P E S A N*\\n`,o=(o=(o+=`\\n${a.rupiah(n)} Total Semua Pesan`)+`\\nKamu Top ${s.indexOf(e.sender)+1} Chat dari ${e.members.length} Peserta\\n`)+t.map((e,a)=>`${a+1}. @${e.jid.replace(/@.+/g,\\\"\\\")}: ${e.chat} pesan`).join(\\\"\\\\n\\\");r.reply(e.chat,o,e,{expiration:e.expiration})},group:!0};\""
+    },
+    {
+      "path": "plugins/group/listpesan.js",
+      "code": "\"exports.run={usage:[\\\"listpesan\\\"],hidden:[\\\"listchat\\\"],category:\\\"group\\\",async:async(e,{func:a,mecha:r,groups:t})=>{t=t.member.filter(e=>void 0!==e.chat&&void 0!==global.db.users[e.jid]&&0<e.chat).filter(a=>e.members.some(e=>e.id===a.jid));if(0==t.length)return e.reply(\\\"Empty data.\\\");var i,t=t.sort((e,a)=>a.chat-e.chat),s=t.map(e=>e.jid);let n=0;for(i of t)n+=i.chat;var o=`乂  *L I S T - P E S A N*\\n`,o=(o=(o+=`\\n${a.rupiah(n)} Total Semua Pesan`)+`\\nKamu Top ${s.indexOf(e.sender)+1} Chat dari ${e.members.length} Peserta\\n`)+t.map((e,a)=>`${a+1}. @${e.jid.replace(/@.+/g,\\\"\\\")}: ${e.chat} pesan`).join(\\\"\\\\n\\\");r.reply(e.chat,o,e,{expiration:e.expiration})},group:!0};\""
     }
   ],
   "remove": [
