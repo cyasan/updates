@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-yt",
+  "version": "9.1.10-events",
   "update": [
     {
       "path": "main.js",
