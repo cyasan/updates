@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-sticker",
+  "version": "9.1.10-tobrut",
   "update": [
     {
       "path": "plugins/ai/ai.js",
