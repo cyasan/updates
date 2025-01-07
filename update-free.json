@@ -65,6 +65,7 @@
   "remove": [
     "plugins/ai/removebg2.js",
     "plugins/convert/fakemedia2.js",
-    "plugins/owner/pushkontak.js"
+    "plugins/owner/pushkontak.js",
+    "plugins/ai/ai.js"
   ]
 }
