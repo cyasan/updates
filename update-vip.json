@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-tikel",
+  "version": "9.1.10-listgroup",
   "update": [
     {
       "path": "plugins/developer/restart.js",
