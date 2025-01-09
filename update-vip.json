@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-listgroup",
+  "version": "9.1.10-play3",
   "update": [
     {
       "path": "plugins/developer/restart.js",
