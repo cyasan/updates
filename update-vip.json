@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-hidetag",
+  "version": "9.1.10-tiktok",
   "update": [
     {
       "path": "plugins/developer/restart.js",
