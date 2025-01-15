@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-tiktok",
+  "version": "9.1.10-help",
   "update": [
     {
       "path": "plugins/developer/restart.js",
