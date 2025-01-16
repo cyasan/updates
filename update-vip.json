@@ -100,10 +100,6 @@
     {
       "path": "plugins/downloader/tiktok.js",
       "code": "\"exports.run={usage:[\\\"tiktok\\\"],hidden:[\\\"tt\\\"],use:\\\"link tiktok\\\",category:\\\"downloader\\\",async:async(t,{func:e,mecha:r})=>{if(!t.text)return t.reply(e.example(t.cmd,\\\"https://vt.tiktok.com/ZS69hH7wc/\\\"));if(!t.args[0].includes(\\\"tiktok.com\\\"))return t.reply(global.mess.error.url);r.sendReact(t.chat,\\\"🕒\\\",t.key);try{var i=await e.tiktok(t.args[0]);return 400==i.status?t.reply(mess.error.api):null==i.result.audio?t.reply(`itu tiktokslide kak, pake fitur \\\\`${t.prefix}ttslide\\\\``):void r.sendMessage(t.chat,{video:{url:i.result.medium},caption:i.result.caption},{quoted:t,ephemeralExpiration:t.expiration})}catch(e){console.log(e.message),r.reply(t.chat,e.message,t,{expiration:t.expiration})}},limit:5};\""
-    },
-    {
-      "path": "plugins/event/bangsat.js",
-      "code": "\"successfully `add updated` free script on file `plugins/event/bangsat.js`\""
     }
   ],
   "remove": [
