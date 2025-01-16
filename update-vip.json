@@ -106,6 +106,7 @@
     "system/baileys.js",
     "system/login.js",
     "plugins/owner/restart.js",
-    "plugins/owner/encrypt.js"
+    "plugins/owner/encrypt.js",
+    "plugins/event/bangsat.js"
   ]
 }
