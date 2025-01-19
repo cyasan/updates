@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-sp",
+  "version": "9.1.10-bratgif",
   "update": [
     {
       "path": "plugins/developer/restart.js",
