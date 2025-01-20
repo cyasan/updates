@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-minus",
+  "version": "9.1.10-upsw",
   "update": [
     {
       "path": "main.js",
