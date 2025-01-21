@@ -1,5 +1,5 @@
 {
-  "version": "9.1.10-ai",
+  "version": "9.1.10-penipu",
   "update": [
     {
       "path": "plugins/developer/restart.js",
