@@ -127,7 +127,6 @@
     "system/login.js",
     "plugins/owner/restart.js",
     "plugins/owner/encrypt.js",
-    "plugins/event/bangsat.js",
     "plugins/event/minus_attitude.js"
   ]
 }
