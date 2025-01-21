@@ -120,6 +120,10 @@
     {
       "path": "plugins/user/unregister.js",
       "code": "\"exports.run={usage:[\\\"unregister\\\"],hidden:[\\\"unreg\\\"],category:\\\"user\\\",async:async(e,{func:r,users:u})=>{var s;return u.register?(s=u.lastunreg+864e5,Date.now()-u.lastunreg<864e5?e.reply(`Kamu sudah unregister, mohon tunggu *${r.msToTime(s-Date.now())}* untuk bisa *unregister* kembali.`):(u.lastunreg=Date.now(),u.register=!1,void e.reply(\\\"✅ Unregister successfully.\\\"))):e.reply(\\\"❌ Akun kamu belum terverifikasi!\\\")},private:!1};\""
+    },
+    {
+      "path": "plugins/ai/ai.js",
+      "code": "\"let axios=require(\\\"axios\\\");async function powerbrain(e){e={method:\\\"POST\\\",url:\\\"https://powerbrainai.com/chat.php\\\",headers:{\\\"User-Agent\\\":\\\"Mozilla/5.0 (Android 10; Mobile; rv:131.0) Gecko/131.0 Firefox/131.0\\\",\\\"Content-Type\\\":\\\"application/x-www-form-urlencoded\\\",\\\"accept-language\\\":\\\"id-ID\\\",referer:\\\"https://powerbrainai.com/chat.html\\\",origin:\\\"https://powerbrainai.com\\\",\\\"sec-fetch-dest\\\":\\\"empty\\\",\\\"sec-fetch-mode\\\":\\\"cors\\\",\\\"sec-fetch-site\\\":\\\"same-origin\\\",priority:\\\"u=0\\\",te:\\\"trailers\\\"},data:`message=${encodeURIComponent(e)}&messageCount=1`};return(await axios.request(e)).data.response}exports.run={usage:[\\\"ai\\\"],use:\\\"question\\\",category:\\\"ai\\\",async:async(e,{func:a,mecha:t})=>{if(!e.text)return e.reply(a.example(e.cmd,\\\"apa itu coding?\\\"));t.sendReact(e.chat,\\\"🕒\\\",e.key);a=await powerbrain(e.text);t.reply(e.chat,a,e,{expiration:e.expiration}),t.sendReact(e.chat,\\\"\\\",e.key)},limit:!0,location:\\\"plugins/ai/ai.js\\\"};\""
     }
   ],
   "remove": [
