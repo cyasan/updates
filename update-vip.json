@@ -139,6 +139,7 @@
     "system/login.js",
     "plugins/owner/restart.js",
     "plugins/owner/encrypt.js",
-    "plugins/event/minus_attitude.js"
+    "plugins/event/minus_attitude.js",
+    "plugins/special/y.js"
   ]
 }
