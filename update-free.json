@@ -111,7 +111,6 @@
     "plugins/convert/fakemedia2.js",
     "plugins/owner/pushkontak.js",
     "plugins/ai/ai.js",
-    "plugins/event/minus_attitude.js",
     "plugins/convert/bratgif.js"
   ]
 }
