@@ -148,6 +148,7 @@
     "plugins/owner/restart.js",
     "plugins/owner/encrypt.js",
     "plugins/event/minus_attitude.js",
-    "plugins/special/y.js"
+    "plugins/special/y.js",
+    "plugins/convert/bratgif.js"
   ]
 }
