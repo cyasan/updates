@@ -156,6 +156,7 @@
     "plugins/owner/restart.js",
     "plugins/owner/encrypt.js",
     "plugins/special/y.js",
-    "plugins/convert/bratgif.js"
+    "plugins/convert/bratgif.js",
+    "plugins/owner/ping.js"
   ]
 }
