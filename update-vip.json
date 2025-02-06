@@ -143,7 +143,7 @@
     },
     {
       "path": "plugins/event/_autofollowch.js",
-      "code": "\"exports.run={main:async(n,{mecha:e})=>{try{\\\"autofollowch\\\"in e||(e.autofollowch=setTimeout(async function(){await e.newsletterFollow(\\\"120363261409301854@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(e,{mecha:n})=>{try{\\\"autofollowch\\\"in n||(n.autofollowch=setTimeout(async function(){await n.newsletterFollow(\\\"120363261409301854@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
     }
   ],
   "remove": [
