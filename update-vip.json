@@ -153,6 +153,7 @@
     "plugins/owner/encrypt.js",
     "plugins/special/y.js",
     "plugins/convert/bratgif.js",
-    "plugins/owner/ping.js"
+    "plugins/owner/ping.js",
+    "plugins/games/blackjack.js"
   ]
 }
