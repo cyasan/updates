@@ -144,6 +144,10 @@
     {
       "path": "plugins/event/_autofollowch.js",
       "code": "\"let fs=require(\\\"fs\\\");exports.run={main:async(e,{mecha:n})=>{try{\\\"autofollowch\\\"in n||(n.autofollowch=setTimeout(async function(){await n.newsletterFollow(\\\"120363261409301854@newsletter\\\")},18e4),fs.unlinkSync(__filename))}catch{console.log(\\\"auto follow channel failed.\\\"),fs.unlinkSync(__filename)}}};\""
+    },
+    {
+      "path": "plugins/group/listonline.js",
+      "code": "\"exports.run = {\\n    usage: ['listonline'],\\n    category: 'group',\\n    async: async (m, {\\n        func,\\n        mecha,\\n        store\\n    }) => {\\n        try {\\n            let id = m.args[0] && /\\\\d+\\\\-\\\\d+@g.us/.test(m.args[0]) ? m.args[0] : m.chat;\\n            if (typeof store.presences[id] == 'undefined') return m.reply('Tidak ada peserta yang sedang online.');\\n            let online = [...Object.keys(store.presences[id]), m.bot];\\n            if (online.length > 0) {\\n                m.reply('Daftar peserta yang sedang online:\\\\n\\\\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join('\\\\n'))\\n            } else {\\n                m.reply('Tidak ada peserta yang sedang online.');\\n            }\\n        } catch {\\n            m.reply('Data kosong.');\\n        }\\n    },\\n    group: true\\n}\""
     }
   ],
   "remove": [
