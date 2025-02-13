@@ -1,5 +1,5 @@
 {
-  "version": "10.9.18",
+  "version": "10.9.19",
   "update": [
     {
       "path": "plugins/developer/restart.js",
