@@ -131,6 +131,7 @@
     "plugins/convert/fakemedia2.js",
     "plugins/owner/pushkontak.js",
     "plugins/ai/ai.js",
-    "plugins/convert/bratgif.js"
+    "plugins/convert/bratgif.js",
+    "plugins/event/_upswpenipu.js"
   ]
 }
