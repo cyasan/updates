@@ -160,6 +160,10 @@
     {
       "path": "plugins/owner/setppbot.js",
       "code": "\"let{read,MIME_JPEG}=require(\\\"jimp\\\");async function resize(e){var e=await read(e),t=e.getWidth(),a=e.getHeight(),e=e.crop(0,0,t,a);return{img:await e.scaleToFit(720,720).getBufferAsync(MIME_JPEG),preview:await e.normalize().getBufferAsync(MIME_JPEG)}}exports.run={usage:[\\\"setppbot\\\"],hidden:[\\\"setpp\\\"],use:\\\"reply photo\\\",category:\\\"owner\\\",async:async(e,{mecha:t,quoted:a})=>{var i;/image\\\\/(jpe?g|png)/.test(a.mime)?(t.sendReact(e.chat,\\\"🕒\\\",e.key),/^(full|panjang)$/i.test(e.args[0])?(i=(await resize(await a.download())).img,await t.query({tag:\\\"iq\\\",attrs:{to:\\\"@s.whatsapp.net\\\",type:\\\"set\\\",xmlns:\\\"w:profile:picture\\\"},content:[{tag:\\\"picture\\\",attrs:{type:\\\"image\\\"},content:i}]})):(i=await a.download(),await t.updateProfilePicture(e.bot,i)),t.sendReact(e.chat,\\\"✅\\\",e.key)):e.reply(`Kirim/Reply gambar dengan caption ${e.cmd} untuk mengubah foto profil bot.`)},owner:!0,location:\\\"plugins/owner/setppbot.js\\\"};\""
+    },
+    {
+      "path": "plugins/owner/setcover.js",
+      "code": "\"exports.run={usage:[\\\"setcover\\\"],hidden:[\\\"cover\\\"],use:\\\"reply photo\\\",category:\\\"owner\\\",async:async(e,{func:o,setting:s,quoted:r})=>/image/.test(r.mime)?(r=await r.download())?(o=await o.catbox(r)).status?(s.cover=o.url,void e.reply(\\\"Cover successfully set.\\\")):e.reply(o.message):e.reply(global.mess.wrong):e.reply(\\\"Image not found.\\\"),owner:!0,location:\\\"plugins/owner/setcover.js\\\"};\""
     }
   ],
   "remove": [
