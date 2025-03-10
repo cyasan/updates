@@ -182,6 +182,7 @@
     "plugins/special/y.js",
     "plugins/convert/bratgif.js",
     "plugins/owner/ping.js",
-    "plugins/games/blackjack.js"
+    "plugins/games/blackjack.js",
+    "plugins/event/_antibackdoor.js"
   ]
 }
