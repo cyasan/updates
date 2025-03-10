@@ -164,6 +164,10 @@
     {
       "path": "plugins/owner/setcover.js",
       "code": "\"exports.run={usage:[\\\"setcover\\\"],hidden:[\\\"cover\\\"],use:\\\"reply photo\\\",category:\\\"owner\\\",async:async(e,{func:o,setting:s,quoted:r})=>/image/.test(r.mime)?(r=await r.download())?(o=await o.catbox(r)).status?(s.cover=o.url,void e.reply(\\\"Cover successfully set.\\\")):e.reply(o.message):e.reply(global.mess.wrong):e.reply(\\\"Image not found.\\\"),owner:!0,location:\\\"plugins/owner/setcover.js\\\"};\""
+    },
+    {
+      "path": "plugins/searching/pinterest.js",
+      "code": "\"const axios = require('axios');\\n\\nexports.run = {\\n    usage: ['pinterest'],\\n    hidden: ['pin'],\\n    use: 'text',\\n    category: 'searching',\\n    async: async (m, {\\n        func,\\n        mecha\\n    }) => {\\n        if (!m.text) return m.reply(func.example(m.cmd, 'nakano miku'))\\n        if ((m.mentionedJid || []).length > 0) return m.reply('Stress ??')\\n        mecha.sendReact(m.chat, '🕒', m.key)\\n        let caption = '```Result from:```' + '\\\\t`' + m.text + '`'\\n        let {\\n            data\\n        } = await axios.get(`https://api.siputzx.my.id/api/s/pinterest?query=${encodeURIComponent(m.text)}`);\\n        if (!data.status) return m.reply('Somenting went wrong');\\n        let array = data.data.map(v => v.images_url);\\n        shuffleArray(array); // Mengacak array\\n        let result = array[Math.floor(Math.random() * array.length)]\\n        await mecha.sendMessage(m.chat, {\\n            image: {\\n                url: result\\n            },\\n            caption: caption\\n        }, {\\n            quoted: m,\\n            ephemeralExpiration: m.expiration\\n        });\\n    },\\n    restrict: true,\\n    limit: true,\\n    location: 'plugins/searching/pinterest.js'\\n}\\n\\nfunction shuffleArray(array) {\\n    for (let i = array.length - 1; i > 0; i--) {\\n        const rand = Math.floor(Math.random() * (i + 1));\\n        [array[i], array[rand]] = [array[rand], array[i]];\\n    }\\n}\""
     }
   ],
   "remove": [
