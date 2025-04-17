@@ -167,6 +167,7 @@
     "plugins/convert/bratgif.js",
     "plugins/owner/ping.js",
     "plugins/games/blackjack.js",
-    "plugins/event/_antibackdoor.js"
+    "plugins/event/_antibackdoor.js",
+    "plugins/_restarted"
   ]
 }
