@@ -116,8 +116,8 @@
     },
     {
       "path": "system/metadata.js",
-      "code": "\"let jidNormalizedUser=require(\\\"@whiskeysockets/baileys\\\").jidNormalizedUser,func=require(\\\"./functions.js\\\"),chalk=require(\\\"chalk\\\"),cooldowns=15e3,lastMessageTime=0,isSpam=a=>a-lastMessageTime<cooldowns||(lastMessageTime=a,!1);module.exports=async(a,e)=>{try{var t,l,o,d,s=jidNormalizedUser(a.user.id);global.db.setting[s]?.maintenance||/^\\\\d.*(@g\\\\.us)$/.test(e)&&(global.db.metadata[e]?(t=e,o=Date.now(),isSpam(o)?console.log(chalk.redBright.bold(`get metadata “${global.db.metadata[t]?.subject||t}“ spam!`)):(o=global.db.metadata[t],l=await a.groupMetadata(t).catch(a=>{}),JSON.stringify(o)!==JSON.stringify(l)?(global.db.metadata[t]={...l},console.log(`Metadata group “${global.db.metadata[t]?.subject||t}“ diperbarui.`)):console.log(`Tidak ada perubahan pada metadata group “${global.db.metadata[t]?.subject||t}“`))):(d=await a.groupMetadata(e).catch(a=>{}),global.db.metadata[e]={...d},console.log(`Pembuatan metadata pada: ${e} telah siap`)))}catch(a){console.error(a)}},func.reloadFile(__filename);\"",
-      "date": "02/05/25"
+      "code": "\"let jidNormalizedUser=require(\\\"@whiskeysockets/baileys\\\").jidNormalizedUser,func=require(\\\"./functions.js\\\"),chalk=require(\\\"chalk\\\"),cooldowns=15e3,lastMessageTime=0,isSpam=a=>a-lastMessageTime<cooldowns||(lastMessageTime=a,!1);module.exports=async(a,e)=>{try{var t,l,o,s,d=jidNormalizedUser(a.user.id);global.db.setting[d]?.maintenance||/^\\\\d.*(@g\\\\.us)$/.test(e)&&(global.db.metadata[e]?(t=e,o=Date.now(),isSpam(o)||(o=global.db.metadata[t],l=await a.groupMetadata(t).catch(a=>{}),JSON.stringify(o)!==JSON.stringify(l)?(global.db.metadata[t]={...l},console.log(`Metadata group “${global.db.metadata[t]?.subject||t}“ diperbarui.`)):console.log(`Tidak ada perubahan pada metadata group “${global.db.metadata[t]?.subject||t}“`))):(s=await a.groupMetadata(e).catch(a=>{}),global.db.metadata[e]={...s},console.log(`Pembuatan metadata pada: ${e} telah siap`)))}catch(a){console.error(a)}},func.reloadFile(__filename);\"",
+      "date": "11/05/25"
     },
     {
       "path": "system/detects.js",
