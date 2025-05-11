@@ -165,6 +165,11 @@
       "path": "plugins/searching/pinterest.js",
       "date": "11/05/25",
       "code": "\"let axios=require(\\\"axios\\\");function shuffleArray(t){for(let e=t.length-1;0<e;e--){var a=Math.floor(Math.random()*(e+1));[t[e],t[a]]=[t[a],t[e]]}}exports.run={usage:[\\\"pinterest\\\"],hidden:[\\\"pin\\\"],use:\\\"text\\\",category:\\\"searching\\\",async:async(e,{func:t,mecha:a})=>{if(!e.text)return e.reply(t.example(e.cmd,\\\"nakano miku\\\"));if(0<(e.mentionedJid||[]).length)return e.reply(\\\"Stress ??\\\");a.sendReact(e.chat,\\\"🕒\\\",e.key);var t=\\\"```Result from:```\\\\t`\\\"+e.text+\\\"`\\\",r=(await axios.get(\\\"https://api.siputzx.my.id/api/s/pinterest?query=\\\"+encodeURIComponent(e.text))).data;if(!r.status)return e.reply(\\\"Somenting went wrong\\\");r=r.data.map(e=>e.images_url),shuffleArray(r),r=r[Math.floor(Math.random()*r.length)];await a.sendMessage(e.chat,{image:{url:r},caption:t},{quoted:e,ephemeralExpiration:e.expiration})},restrict:!0,limit:!0,location:\\\"plugins/searching/pinterest.js\\\"};\""
+    },
+    {
+      "path": "plugins/developer/update.js",
+      "date": "11/05/25",
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={usage:[\\\"update\\\"],hidden:[\\\"up\\\"],use:\\\"reply code\\\",category:\\\"developer\\\",async:async(e,{func:t,mecha:a})=>{if(!e.text)return e.reply(t.example(e.cmd,\\\"handler <reply code>\\\"));if(!e.quoted)return e.reply(\\\"Reply text atau file scriptnya.\\\");let r=e.text.trim().toLowerCase(),s,i;t=e=>/\\\\.js$/.test(e);let n=e=>e.replace(/\\\\.js/g,\\\"\\\");var d=fs.readdirSync(\\\"./system\\\").filter(t),t=fs.readdirSync(\\\"./lib\\\").filter(t);return\\\"handler\\\"===r&&(s=\\\"./handler.js\\\"),\\\"index\\\"===r&&(s=\\\"./index.js\\\"),\\\"main\\\"===r&&(s=\\\"./main.js\\\"),\\\"config\\\"===r&&(s=\\\"./config.js\\\"),d.some(e=>n(e)===r)&&(s=`./system/${r}.js`),(s=t.some(e=>n(e)===r)?`./lib/${r}.js`:s)?fs.existsSync(s)?(i=/application\\\\/javascript/.test(e.quoted.mime)?await e.quoted.download():e.quoted.text,await fs.writeFileSync(s,i),void await a.sendReact(e.chat,\\\"✅\\\",e.key)):e.reply(\\\"File path not found.\\\"):e.reply(\\\"Format invalid!\\\")},devs:!0,location:\\\"plugins/developer/update.js\\\"};\""
     }
   ],
   "remove": [
