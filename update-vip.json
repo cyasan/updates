@@ -159,6 +159,11 @@
       "path": "plugins/owner/addcmd.js",
       "date": "11/05/25",
       "code": "\"exports.run={usage:[\\\"addcmd\\\"],hidden:[\\\"setcmd\\\"],use:\\\"reply sticker\\\",category:\\\"owner\\\",async:async(e,{mecha:t,quoted:a})=>/webp/.test(a.mime)?e.text?(a=e.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString().replace(/,/g,\\\"\\\"),global.db.stickercmd[a]?e.reply(\\\"Stiker tersebut udah ada cmd!\\\"):(global.db.stickercmd[a]={text:e.text,creator:e.sender},void t.sendReact(e.chat,\\\"✅\\\",e.key))):e.reply(\\\"Untuk command apa?\\\"):e.reply(\\\"Reply stikernya!\\\"),owner:!0,location:\\\"plugins/owner/addcmd.js\\\"};\""
+    },
+    {
+      "path": "plugins/owner/delcmd.js",
+      "date": "11/05/25",
+      "code": "\"exports.run={usage:[\\\"addcmd\\\"],hidden:[\\\"setcmd\\\"],use:\\\"reply sticker\\\",category:\\\"owner\\\",async:async(e,{mecha:t,quoted:a})=>/webp/.test(a.mime)?e.text?(a=e.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString().replace(/,/g,\\\"\\\"),global.db.stickercmd[a]?e.reply(\\\"Stiker tersebut udah ada cmd!\\\"):(global.db.stickercmd[a]={text:e.text,creator:e.sender},void t.sendReact(e.chat,\\\"✅\\\",e.key))):e.reply(\\\"Untuk command apa?\\\"):e.reply(\\\"Reply stikernya!\\\"),owner:!0,location:\\\"plugins/owner/addcmd.js\\\"};\""
     }
   ],
   "remove": [
