@@ -192,6 +192,11 @@
       "path": "plugins/rpg/dompet.js",
       "date": "13/05/25",
       "code": "\"exports.run = {\\nusage: ['dompet'],\\ncategory: 'rpg',\\nasync: async (m, { func, mecha, setting, fkon }) => {\\nlet who = m.quoted ? m.quoted.sender : m.mentionedJid[0] ? m.mentionedJid[0] : m.sender\\nif (typeof global.db.users[who] == 'undefined') return m.reply('User tidak ada didalam database.')\\nif (!global.db.users[who].register) return m.reply('Pengguna tersebut belum terverifikasi.')\\nlet user = global.db.users[who]\\nlet caption = `Dompet @${who.split('@')[0]}\\n\\nName🪪: ${user.name.replaceAll('\\\\n', '')}\\nBalance💰: $${func.rupiah(user.balance)}\\nLimit💳: ${user.limit}/${user.premium ? 1000 : setting.limit.free}\\nMoney💲: ${func.rupiah(user.money)}\\nExp📊: ${user.exp}`\\nawait m.reply(func.texted('monospace', caption))\\n},\\nregister: true\\n}\""
+    },
+    {
+      "path": "plugins/developer/delplugin.js",
+      "date": "13/05/25",
+      "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");exports.run={usage:[\\\"delplugin\\\"],hidden:[\\\"dp\\\"],use:\\\"path\\\",category:\\\"developer\\\",async:async(t,{mecha:e,plugins:s})=>{if(!t.text)return t.reply(`Format salah!\\nContoh : *${t.cmd} special/ping*`);try{if(!fs.existsSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\")))return t.reply(`Plugin '${t.text}' tidak ditemukan!\\n\\n`+Object.keys(s).map(e=>e?.replace(\\\"plugins/\\\",\\\"\\\")).join(\\\"\\\\n\\\"));await fs.unlinkSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\")),await e.sendReact(t.chat,\\\"✅\\\",t.key)}catch(e){t.reply(global.mess.error.api)}},devs:!0,location:\\\"plugins/developer/delplugin.js\\\"};\""
     }
   ],
   "remove": [
