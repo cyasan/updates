@@ -197,6 +197,11 @@
       "path": "plugins/developer/delplugin.js",
       "date": "13/05/25",
       "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");exports.run={usage:[\\\"delplugin\\\"],hidden:[\\\"dp\\\"],use:\\\"path\\\",category:\\\"developer\\\",async:async(t,{mecha:e,plugins:s})=>{if(!t.text)return t.reply(`Format salah!\\nContoh : *${t.cmd} special/ping*`);try{if(!fs.existsSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\")))return t.reply(`Plugin '${t.text}' tidak ditemukan!\\n\\n`+Object.keys(s).map(e=>e?.replace(\\\"plugins/\\\",\\\"\\\")).join(\\\"\\\\n\\\"));await fs.unlinkSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\")),await e.sendReact(t.chat,\\\"✅\\\",t.key)}catch(e){t.reply(global.mess.error.api)}},devs:!0,location:\\\"plugins/developer/delplugin.js\\\"};\""
+    },
+    {
+      "path": "plugins/developer/backupsc.js",
+      "date": "13/05/25",
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={usage:[\\\"backupsc\\\"],hidden:[\\\"backupme\\\"],category:\\\"developer\\\",async:async(n,{func:e,mecha:c})=>{c.sendReact(n.chat,\\\"🕒\\\",n.key);try{let a=await e.backupSC();var i=`Berikut adalah file backup kode bot:\\nNama file: ${a.name}\\nUkuran file: ${a.size} MB`;await c.sendMessage(global.owner,{document:{url:a.name},caption:i,mimetype:\\\"application/zip\\\",fileName:a.name},{quoted:n,ephemeralExpiration:n.expiration}).then(e=>fs.unlinkSync(a.name))}catch(e){console.error(e),n.reply(\\\"Terjadi kesalahan saat membuat backup :\\\\n\\\\n\\\"+e.message)}},devs:!0,location:\\\"plugins/developer/backupsc.js\\\"};\""
     }
   ],
   "remove": [
