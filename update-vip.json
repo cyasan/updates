@@ -3,8 +3,8 @@
   "update": [
     {
       "path": "plugins/developer/restart.js",
-      "code": "\"let multidb = new(require(process.cwd() + '/system/multidb.js'))();exports.run={usage:[\\\"restart\\\"],category:\\\"developer\\\",async:async(e,{func:a,mecha:t})=>{await t.sendMessage(e.chat,{text:a.texted(\\\"monospace\\\",\\\"Restarting...\\\")},{quoted:e,ephemeralExpiration:e.expiration}).then(async()=>{if(await multidb.init.save(global.db),!process.send)return e.reply(\\\"Tidak dapat me-restart bot karena file `index.js` tidak dijalankan.\\\");process.send(\\\"reset\\\")})},devs:!0};\"",
-      "date": "11/05/25"
+      "code": "\"let multidb=new(require(process.cwd()+\\\"/system/multidb.js\\\"));exports.run={usage:[\\\"restart\\\"],category:\\\"developer\\\",async:async(e,{func:t,mecha:a})=>{await a.sendMessage(e.chat,{text:t.texted(\\\"monospace\\\",\\\"Restarting...\\\")},{quoted:e,ephemeralExpiration:e.expiration}).then(async()=>{if(await multidb.init.save(global.db),!process.send)return e.reply(\\\"Tidak dapat me-restart bot karena file `index.js` tidak dijalankan.\\\");process.send(\\\"reset\\\")})},location:\\\"plugins/developer/restart.js\\\",devs:!0};\"",
+      "date": "13/05/25"
     },
     {
       "path": "plugins/developer/backup.js",
