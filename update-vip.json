@@ -212,6 +212,11 @@
       "path": "plugins/developer/saveplugin.js",
       "date": "13/05/25",
       "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");function getPathLocation(e){return!!(e=e.match(/location:\\\\s*['\\\"]([^'\\\"]+)['\\\"]/))&&e[1]}exports.run={usage:[\\\"saveplugin\\\"],hidden:[\\\"sp\\\"],use:\\\"path + reply code\\\",category:\\\"developer\\\",async:async(t,{mecha:a,quoted:e})=>{if(!t.quoted)return t.reply(\\\"Mau simpan plugin dengan command apa? reply teks script nya!\\\");try{var n,o=/application\\\\/javascript/.test(e.mime)?(n=await e.download(),Buffer.from(n,\\\"base64\\\").toString(\\\"utf-8\\\")):t.quoted.text,r=t.text?t.text.trim():getPathLocation(o);if(!r)return t.reply(\\\"path location not found, please enter the plugins path.\\\");var s=path.join(process.cwd(),\\\"plugins\\\",r.replace(/plugins\\\\/|\\\\.js/g,\\\"\\\")+\\\".js\\\");fs.writeFileSync(s,o),await a.sendReact(t.chat,\\\"✅\\\",t.key)}catch(e){console.log(e),a.sendReact(t.chat,\\\"❌\\\",t.key)}},location:\\\"plugins/developer/saveplugin.js\\\",devs:!0};\""
+    },
+    {
+      "path": "plugins/developer/getplugin.js",
+      "date": "13/05/25",
+      "code": "\"let path=require(\\\"path\\\"),fs=require(\\\"fs\\\");exports.run={usage:[\\\"getplugin\\\"],hidden:[\\\"gp\\\"],use:\\\"path\\\",category:\\\"developer\\\",async:async(t,{mecha:e,plugins:a})=>{try{if(!t.text)return t.reply(`Format salah!\\nContoh : *${t.cmd} special/ping*`);var p=fs.readFileSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\"),\\\"utf-8\\\");e.sendMessage(t.chat,{text:p},{quoted:t,ephemeralExpiration:t.expiration})}catch(e){t.reply(`Plugin '${t.text}' tidak ditemukan!\\n\\n`+Object.keys(a).map(e=>e?.replace(\\\"plugins/\\\",\\\"\\\")).join(\\\"\\\\n\\\"))}},devs:!0,location:\\\"plugins/developer/getplugin.js\\\"};\""
     }
   ],
   "remove": [
