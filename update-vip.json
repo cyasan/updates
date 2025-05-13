@@ -202,6 +202,11 @@
       "path": "plugins/developer/backupsc.js",
       "date": "13/05/25",
       "code": "\"let fs=require(\\\"fs\\\");exports.run={usage:[\\\"backupsc\\\"],hidden:[\\\"backupme\\\"],category:\\\"developer\\\",async:async(n,{func:e,mecha:c})=>{c.sendReact(n.chat,\\\"🕒\\\",n.key);try{let a=await e.backupSC();var i=`Berikut adalah file backup kode bot:\\nNama file: ${a.name}\\nUkuran file: ${a.size} MB`;await c.sendMessage(global.owner,{document:{url:a.name},caption:i,mimetype:\\\"application/zip\\\",fileName:a.name},{quoted:n,ephemeralExpiration:n.expiration}).then(e=>fs.unlinkSync(a.name))}catch(e){console.error(e),n.reply(\\\"Terjadi kesalahan saat membuat backup :\\\\n\\\\n\\\"+e.message)}},devs:!0,location:\\\"plugins/developer/backupsc.js\\\"};\""
+    },
+    {
+      "path": "plugins/developer/getfile.js",
+      "date": "13/05/25",
+      "code": "\"let path=require(\\\"path\\\"),fs=require(\\\"fs\\\");exports.run={usage:[\\\"getfile\\\"],hidden:[\\\"gf\\\"],use:\\\"path file\\\",category:\\\"developer\\\",async:async(e,{func:s})=>{var t,r;return e.text?(t=e.text.trim().toLowerCase(),r=path.join(process.cwd(),t),fs.existsSync(r)?(r=fs.readFileSync(r,\\\"utf-8\\\"),void e.reply(r)):e.reply(`File ${t}.js does not exist!`)):e.reply(s.example(e.cmd,\\\"config.js\\\"))},devs:!0,location:\\\"plugins/developer/getfile.js\\\"};\""
     }
   ],
   "remove": [
