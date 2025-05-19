@@ -133,7 +133,6 @@
   "remove": [
     "plugins/ai/removebg2.js",
     "plugins/convert/fakemedia2.js",
-    "plugins/owner/pushkontak.js",
     "plugins/event/_antibackdoor.js",
     "plugins/group/kickall.js",
     "plugins/games/werewolf.js"
