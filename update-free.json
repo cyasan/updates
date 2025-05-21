@@ -132,6 +132,10 @@
     {
       "path": "system/anticall.js",
       "code": "\"let fs=require(\\\"fs\\\"),chalk=require(\\\"chalk\\\"),func=require(\\\"./functions.js\\\");module.exports=async(s,[n])=>{try{let{from:a,id:e,status:l,isVideo:t,isGroup:i}=n;if(global.db.setting.anticall&&\\\"offer\\\"==l&&!i){if(await s.rejectCall(e,a),Object.values(global.devs).includes(a))return s.sendMessage(global.owner,{text:`Terdeteksi @${a.split(\\\"@\\\")[0]} telah melakukan `+(t?\\\"Video Call\\\":\\\"Voice Call\\\"),mentions:[a]},{quoted:func.fstatus(\\\"System Notification\\\"),ephemeralExpiration:86400});void 0===global.db.users[a]||global.db.users[a].premium||(await s.sendMessage(a,{text:`*${s.user.name||s.user.verifiedName||\\\"mecha-bot\\\"}* tidak bisa menerima telfon.\\\\n`+(a!==global.owner?\\\"Kamu telah melanggar rules bot, maaf kamu akan diblokir.\\\\n\\\\nJika ingin membuka blokir akan dikenakan biaya sebesar Rp. 5.000,-\\\":\\\"\\\"),mentions:[a]},{quoted:func.fstatus(\\\"System Notification\\\"),ephemeralExpiration:86400}).then(e=>s.sendkontak(a,global.owner,global.ownerName,e)),setTimeout(async()=>{global.db.users[a].banned=!0,global.db.users[a].expired.banned=\\\"PERMANENT\\\",await s.updateBlockStatus(a,\\\"block\\\")},3e3))}}catch(e){console.error(e)}},func.reloadFile(__filename);\""
+    },
+    {
+      "path": "system/localdb.js",
+      "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");module.exports=class{constructor(s){this.name=\\\"database.json\\\",this.data={},this.file=path.join(process.cwd(),\\\"database\\\",this.name)}read=async()=>{let s;return s=fs.existsSync(this.file)?JSON.parse(fs.readFileSync(this.file)):(fs.writeFileSync(this.file,JSON.stringify(this.data,null,2)),this.data)};save=async s=>{this.data=s||global.db;s=path.dirname(this.file);return fs.existsSync(s)||fs.mkdirSync(s,{recursive:!0}),fs.writeFileSync(this.file,JSON.stringify(this.data,null,2)),this.file}};\""
     }
   ],
   "remove": [
