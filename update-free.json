@@ -136,6 +136,10 @@
     {
       "path": "system/localdb.js",
       "code": "\"let fs=require(\\\"fs\\\"),path=require(\\\"path\\\");module.exports=class{constructor(s){this.name=\\\"database.json\\\",this.data={},this.file=path.join(process.cwd(),\\\"database\\\",this.name)}read=async()=>{let s;return s=fs.existsSync(this.file)?JSON.parse(fs.readFileSync(this.file)):(fs.writeFileSync(this.file,JSON.stringify(this.data,null,2)),this.data)};save=async s=>{this.data=s||global.db;s=path.dirname(this.file);return fs.existsSync(s)||fs.mkdirSync(s,{recursive:!0}),fs.writeFileSync(this.file,JSON.stringify(this.data,null,2)),this.file}};\""
+    },
+    {
+      "path": "system/mongodb.js",
+      "code": "\"let MongoClient=require(\\\"mongodb\\\").MongoClient;module.exports=class{constructor(t){this._id=1,this.url=/mongo/.test(t)?t:\\\"\\\",this.db=\\\"database\\\",this.options={useNewUrlParser:!0,useUnifiedTopology:!0},this.client=new MongoClient(this.url,this.options),this.connect()}exec=async t=>{try{return await this.client.connect(),await this.client.db(this.db).collection(t)}catch(t){console.log(\\\"System restarted because your mongodb connection error . . .\\\"),process.exit(1)}};read=async()=>{try{var t=await(await this.exec(\\\"database\\\")).findOne({_id:this._id});return t?t.data:(await(await this.exec(\\\"database\\\")).insertMany([{_id:this._id,data:{}}]),{})}catch(t){console.log(\\\"System restarted because your mongodb connection error . . .\\\"),process.exit(1)}};save=async t=>{try{var e=await(await this.exec(\\\"database\\\")).findOne({_id:this._id}),a=t||global.db||{};e?await(await this.exec(\\\"database\\\")).updateOne({_id:this._id},{$set:{data:a}}):await(await this.exec(\\\"database\\\")).insertMany([{_id:this._id,data:a}])}catch(t){console.log(\\\"System restarted because your mongodb connection error . . .\\\"),process.exit(1)}};connect=async()=>{await this.client.connect().then(t=>console.log(\\\"</> Success connect to MongoDb √\\\"));var t=await this.client.db(this.db);await(await t.listCollections().toArray()).some(t=>\\\"data\\\"==t.name)||t.createCollection(\\\"data\\\")}};\""
     }
   ],
   "remove": [
