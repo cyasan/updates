@@ -208,6 +208,10 @@
     {
       "path": "plugins/owner/restart.js",
       "code": "\"exports.run={usage:[\\\"restart\\\"],category:\\\"owner\\\",async:async(e,{func:a,mecha:t})=>{await t.sendMessage(e.chat,{text:a.texted(\\\"monospace\\\",\\\"Restarting...\\\")},{quoted:e,ephemeralExpiration:e.expiration}).then(async()=>{if(await global.DB.save(global.db),!process.send)return e.reply(\\\"Tidak dapat me-restart bot karena file `index.js` tidak dijalankan.\\\");process.send(\\\"reset\\\")})},owner:!0};\""
+    },
+    {
+      "path": "plugins/owner/backup.js",
+      "code": "\"let fs=require(\\\"fs\\\");exports.run={usage:[\\\"backup\\\"],category:\\\"owner\\\",async:async(a,{mecha:e})=>{e.sendReact(a.chat,\\\"🕒\\\",a.key),await global.DB.save(global.db),await fs.writeFileSync(\\\"./database/database.json\\\",JSON.stringify(global.db,null,2)),await e.sendMessage(a.chat,{document:fs.readFileSync(\\\"./database/database.json\\\"),caption:\\\"Database \\\"+global.botName,mimetype:\\\"application/json\\\",fileName:\\\"database.json\\\"},{quoted:a,ephemeralExpiration:a.expiration})},owner:!0};\""
     }
   ],
   "remove": [
