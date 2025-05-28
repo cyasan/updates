@@ -190,6 +190,7 @@
     "plugins/ai/removebg2.js",
     "plugins/convert/fakemedia2.js",
     "plugins/event/_antibackdoor.js",
-    "plugins/games/werewolf.js"
+    "plugins/games/werewolf.js",
+    "plugins/games/sambungkata.js"
   ]
 }
