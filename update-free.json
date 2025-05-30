@@ -180,6 +180,10 @@
     {
       "path": "plugins/owner/backup.js",
       "code": "\"let fs=require(\\\"fs\\\");exports.run={usage:[\\\"backup\\\"],category:\\\"owner\\\",async:async(a,{mecha:e})=>{e.sendReact(a.chat,\\\"🕒\\\",a.key),await global.DB.save(global.db),await fs.writeFileSync(\\\"./database/database.json\\\",JSON.stringify(global.db,null,2)),await e.sendMessage(a.chat,{document:fs.readFileSync(\\\"./database/database.json\\\"),caption:\\\"Database \\\"+global.botName,mimetype:\\\"application/json\\\",fileName:\\\"database.json\\\"},{quoted:a,ephemeralExpiration:a.expiration})},owner:!0};\""
+    },
+    {
+      "path": "plugins/special/script.js",
+      "code": "\"d6b70b136ade2a624cc353134a5ed34ffedc1e0316eed99e91ead1b0d8c0ee06bca2e08da5aac6acd16e2108b1d43771c2d1cc427acf2488947530b7fde08de8bd944eb5767dff855ce9491bdc44d9f14483799d1578b27a8b556863d7e352ac011e0c2c294660b4f5560248aed94ed8537efe7913c4167b083e1c849124952e293e491d13b7fe349140b3375f3bc7cfa39b95eae6584a667f1d0a195f859471bbabdfd876d2ea1ab51aa6ff5572733ab3f7ba303d888686ea0a62ac162df007b5315b0fb90c6960e3a9aaee63a5c8e83cf9a6674765d3936694db2602e2d8dbbe5d351f3698df49b052a5285a554d146b5dfca5d9901f7625d3f564a59650d54af6b9abdf6b47acd2c43534e8290f06\""
     }
   ],
   "remove": [
