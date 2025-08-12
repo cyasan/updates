@@ -134,11 +134,6 @@
       "code": "\"exports.run={usage:[\\\"addcmd\\\"],hidden:[\\\"setcmd\\\"],use:\\\"reply sticker\\\",category:\\\"owner\\\",async:async(e,{mecha:t,quoted:a})=>/webp/.test(a.mime)?e.text?(a=e.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString().replace(/,/g,\\\"\\\"),global.db.stickercmd[a]?e.reply(\\\"Stiker tersebut udah ada cmd!\\\"):(global.db.stickercmd[a]={text:e.text,creator:e.sender},void t.sendReact(e.chat,\\\"✅\\\",e.key))):e.reply(\\\"Untuk command apa?\\\"):e.reply(\\\"Reply stikernya!\\\"),owner:!0,location:\\\"plugins/owner/addcmd.js\\\"};\""
     },
     {
-      "path": "plugins/owner/delcmd.js",
-      "date": "11/05/25",
-      "code": "\"exports.run={usage:[\\\"addcmd\\\"],hidden:[\\\"setcmd\\\"],use:\\\"reply sticker\\\",category:\\\"owner\\\",async:async(e,{mecha:t,quoted:a})=>/webp/.test(a.mime)?e.text?(a=e.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString().replace(/,/g,\\\"\\\"),global.db.stickercmd[a]?e.reply(\\\"Stiker tersebut udah ada cmd!\\\"):(global.db.stickercmd[a]={text:e.text,creator:e.sender},void t.sendReact(e.chat,\\\"✅\\\",e.key))):e.reply(\\\"Untuk command apa?\\\"):e.reply(\\\"Reply stikernya!\\\"),owner:!0,location:\\\"plugins/owner/addcmd.js\\\"};\""
-    },
-    {
       "path": "plugins/searching/pinterest.js",
       "date": "17/05/25",
       "code": "\"let axios=require(\\\"axios\\\");function shuffleArray(t){for(let e=t.length-1;0<e;e--){var a=Math.floor(Math.random()*(e+1));[t[e],t[a]]=[t[a],t[e]]}}exports.run={usage:[\\\"pinterest\\\"],hidden:[\\\"pin\\\"],use:\\\"text\\\",category:\\\"searching\\\",async:async(e,{func:t,mecha:a})=>{if(!e.text)return e.reply(t.example(e.cmd,\\\"nakano miku\\\"));if(0<(e.mentionedJid||[]).length)return e.reply(\\\"Stress ??\\\");a.sendReact(e.chat,\\\"🕒\\\",e.key);var t=\\\"```Result from:```\\\\t`\\\"+e.text+\\\"`\\\",r=(await axios.get(\\\"https://api.vreden.my.id/api/pinterest?query=\\\"+encodeURIComponent(e.text))).data;if(200!=r.status)return e.reply(\\\"Somenting went wrong\\\");r=r.result,shuffleArray(r),r=r[Math.floor(Math.random()*r.length)];await a.sendMessage(e.chat,{image:{url:r},caption:t},{quoted:e,ephemeralExpiration:e.expiration})},restrict:!0,limit:!0,location:\\\"plugins/searching/pinterest.js\\\"};\""
