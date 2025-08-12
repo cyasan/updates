@@ -108,8 +108,5 @@
       "code": "\"let path=require(\\\"path\\\"),fs=require(\\\"fs\\\");exports.run={usage:[\\\"getplugin\\\"],hidden:[\\\"gp\\\"],use:\\\"path\\\",category:\\\"developer\\\",async:async(t,{mecha:e,plugins:a})=>{try{if(!t.text)return t.reply(`Format salah!\\nContoh : *${t.cmd} special/ping*`);var p=fs.readFileSync(path.join(process.cwd(),\\\"plugins\\\",t.text+\\\".js\\\"),\\\"utf-8\\\");e.sendMessage(t.chat,{text:p},{quoted:t,ephemeralExpiration:t.expiration})}catch(e){t.reply(`Plugin '${t.text}' tidak ditemukan!\\n\\n`+Object.keys(a).map(e=>e?.replace(\\\"plugins/\\\",\\\"\\\")).join(\\\"\\\\n\\\"))}},devs:!0,location:\\\"plugins/developer/getplugin.js\\\"};\""
     }
   ],
-  "remove": [
-    "plugins/owner/ping.js",
-    "plugins/games/blackjack.js"
-  ]
+  "remove": []
 }
