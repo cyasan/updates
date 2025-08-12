@@ -110,7 +110,6 @@
   ],
   "remove": [
     "plugins/owner/ping.js",
-    "plugins/games/blackjack.js",
-    "plugins/_restarted"
+    "plugins/games/blackjack.js"
   ]
 }
