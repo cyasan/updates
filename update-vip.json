@@ -40,5 +40,14 @@
     }
   ],
   "remove": [],
-  "CAF": []
+  "CAF": [
+    {
+      "name": "test",
+      "url": "https://raw.githubusercontent.com/cyasan/updates/main/test.zip",
+      "version": "1.0.0",
+      "username": [
+        "SuryaDev"
+      ]
+    }
+  ]
 }
